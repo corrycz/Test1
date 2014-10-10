@@ -1,0 +1,58 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        selector();
+
+    }
+
+    public static void selector() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("zadej cislo");
+        int i = in.nextInt();
+        System.out.println("zadej druhe cislo");
+        int j = in.nextInt();
+        System.out.println("nasobeni 1");
+        System.out.println("deleni 2");
+        System.out.println("scitani 3");
+        System.out.println("odcitani 4");
+        System.out.println("exit 0");
+        int a = in.nextInt();
+        int b;
+        switch (a) {
+            case 1:
+                b = i * j;
+                System.out.println("Vysledek nasobeni je: " + b);
+                check();
+            case 2:
+                b = i / j;
+                System.out.println("Vysledek deleni je: " + b);
+                check();
+            case 3:
+                b = i + j;
+                System.out.println("Vysledek scitani je: " + b);
+                check();
+            case 4:
+                b = i - j;
+                System.out.println("Vysledek odcitani je: " + b);
+                check();
+            case 0:
+                System.exit(0);
+            default:
+                System.out.println("Zadali jste chybne cislo");
+                check();
+        }
+    }
+
+    public static void check() {
+        Scanner checky = new Scanner(System.in);
+        System.out.println("Znova - 1; Ukoncit - 2;");
+        int conty = checky.nextInt();
+        if (conty == 1) {
+            selector();
+        } else System.exit(0);
+    }
+}
